@@ -1,7 +1,8 @@
 const express = require("express")
 const path = require("path")
 const app = express()
-const PORT = 3000
+require("dotenv").config()
+const PORT = process.env.PORT || 3000
 
 //Markdown to html
 const marked = require("marked")
