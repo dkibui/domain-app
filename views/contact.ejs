@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+        <style>
+            body {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .footer {
+                margin-top: auto;
+            }
+        </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <%- include('./partials/nav'); %>
+                <link rel="stylesheet" href="/css/style.css">
+        </header>
+        <section class="contacts">
+            <h1 class="contacts__h1 contacts__h1--align">How can we help you
+                today?
+            </h1>
+            <h2 id="contact" class="contacts__h2 contacts__h2--align">
+                We're here for you. Give us a call or send an Email.
+            </h2>
+            <p class="contacts__p contacts__p--align">
+                When we started Visign, we set out to provide professional brand
+                development services to SMEs at affordable prices. We're excited
+                to
+                work with you today. Your brand's journey to the next
+                level begins here.
+            </p>
+            <div class="contacts__button-div">
+                <a class="contacts__link" href="mailto:dkibui@visign.co.ke">
+                    <button
+                        class="contacts__button contacts__button--bg contacts__button--text contacts__button--align">
+                        Email Us
+                    </button></a>
+            </div>
+            <p class="contacts__address">
+                Cell: +254 728 49 4090 <br />
+                Email: dkibui@visign.co.ke<br />Office: 6th Floor, Westend
+                Towers.<br />Westlands
+                Nairobi.
+            </p>
+        </section>
+    </div>
+    <%- include('./partials/footer'); %>
+</body>
+
+</html>

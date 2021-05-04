@@ -1,0 +1,20 @@
+{
+  "name": "visignexpressapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon app"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "ejs": "^2.6.2",
+    "express": "~4.16.1",
+    "marked": "^2.0.3",
+    "morgan": "~1.9.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+        <style>
+            :root {
+                --black: #000;
+                --color: #9c9c9c;
+                --deep-blue: #172647;
+                --grey: #969dac;
+                --muted-green: #e7fcfe;
+                --primary: #ffad0a;
+                --purple: #9b5de5;
+                --red: #ff3400;
+                --green: #1ae5c1;
+                --white: #fff;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #fdfdfd;
+                /* background-color: #172647; */
+                color: white;
+                overflow-y: scroll;
+                /* Show scrollbars */
+            }
+
+            h1 {
+                text-align: center;
+                margin: 2rem 0;
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 2rem;
+                margin-bottom: 0.75rem;
+                font-size: 1rem;
+                font-weight: 400;
+            }
+
+            .accordion {
+                width: 90%;
+                max-width: 1280px;
+                margin: auto;
+            }
+
+            .accordion-item {
+                background-color: rgb(247, 247, 247);
+                color: #111;
+                margin: 1rem 0;
+                /* border-radius: 0.5rem; */
+                /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25); */
+            }
+
+            .accordion-item-header {
+                padding: 0.5rem 3rem 0.5rem 1rem;
+                min-height: 3.5rem;
+                line-height: 1.25rem;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .accordion-item-header::after {
+                content: "\002B";
+                font-size: 1.52rem;
+                position: absolute;
+                right: 1rem;
+            }
+
+            .accordion-item-header.active::after {
+                content: "\2212";
+            }
+
+            .accordion-item-body {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s cubic-bezier(0.32, 0, 0.07, 1);
+            }
+
+            .accordion-item-body-content {
+                padding: 1rem;
+                line-height: 1.5;
+                /* border-top: 1px solid; */
+                border-image: linear-gradient(to right, #082d52, yellow, 1);
+            }
+
+            .container {
+                width: 90%;
+                max-width: 1280px;
+                margin: auto;
+                margin-top: 3em;
+            }
+
+            .container p {
+                text-align: center;
+                margin-bottom: 2em;
+            }
+
+            /* 
+///////
+*/
+
+            main {
+                width: 90%;
+                max-width: 1280px;
+                margin: auto;
+                margin-top: 3em;
+            }
+
+            .author {
+                margin-bottom: 1rem;
+            }
+
+            select {
+                display: block;
+                font-size: 1rem;
+                line-height: 1.3;
+                padding: 0.5rem 0.75rem;
+                width: 100%;
+                max-width: 320px;
+                box-sizing: border-box;
+                margin: 0;
+                border: 1px solid #b3b3b380;
+                background-color: white;
+                color: #6d6d6d;
+            }
+
+            .input {
+                margin-bottom: 1rem;
+            }
+
+            input,
+            textarea {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                border: 1px solid #b3b3b380;
+                outline-style: none;
+                color: #6d6d6d;
+                display: block;
+                width: 100%;
+            }
+
+            button {
+                padding: 0.5rem 1.5rem;
+                font-size: 1.1rem;
+                border: none;
+                border-radius: 25px;
+                outline-style: none;
+                color: #ffffff;
+            }
+
+            .btn {
+                background-color: var(--green);
+            }
+
+            .btn-delete {
+                background-color: var(--red);
+            }
+
+            .edit-delete {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            h1 {
+                margin-top: 2em;
+                margin-bottom: 0.75em;
+            }
+
+            h4 {
+                margin-bottom: 0.75rem;
+                font-size: 1rem;
+                font-weight: 400;
+            }
+        </style>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/nav'); %>
+    </header>
+    <div class="container">
+        <h1 class="title">MANAGE BLOGS</h1>
+        <p>
+            This page allows you to manage your blogs. Post,edit, delete and
+            more. Blogs are written in markdown.
+        </p>
+    </div>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                POST A BLOG
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    <div class="form-div">
+                        <form action="/admin/blogs/create" method="POST">
+                            <div>
+                                <h4>Select author</h4>
+                                <select name="author" class="author">
+                                    <option value="1">David Kibui</option>
+                                    <option value="2">Amy Inda</option>
+                                </select>
+                            </div>
+                            <div class="author">
+                                <h4>Select category</h4>
+                                <select name="category" class="category">
+                                    <option value="1">Javascript</option>
+                                    <option value="2">Nodejs</option>
+                                    <option value="3">CSS</option>
+                                    <option value="4">Postgres</option>
+                                    <option value="5">HTML</option>
+                                    <option value="6">SVELTE</option>
+                                </select>
+                            </div>
+                            <div class="input">
+                                <input name="title" class="blog-name"
+                                    type="text" placeholder="Enter blog title *"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="input">
+                                <input name="summary" class="summary"
+                                    type="text"
+                                    placeholder="Enter blog summary *"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="input">
+                                <textarea name="content" class="content"
+                                    placeholder="Enter blog body *"
+                                    autocomplete="off" rows="15"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Post
+                                Blog</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Edit and Delete Blogs</h2>
+        <% JSON.parse(blogs).forEach(function(blog) { %>
+            <div class="accordion-item" data-div="<%=blog.id %>">
+                <div class="accordion-item-header">
+                    <%=blog.title %>
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <div class="form-div">
+                            <form action="/admin/update/:id">
+                                <div>
+                                    <h4>Select author</h4>
+                                    <select name="author" class="author">
+                                        <option value="1">David Kibui</option>
+                                        <option value="2">Amy Inda</option>
+                                    </select>
+                                </div>
+                                <div class="author">
+                                    <h4>Select category</h4>
+                                    <select name="category" class="category">
+                                        <option value="1">Javascript</option>
+                                        <option value="2">Nodejs</option>
+                                        <option value="3">CSS</option>
+                                        <option value="4">Postgres</option>
+                                        <option value="5">HTML</option>
+                                        <option value="6">SVELTE</option>
+                                    </select>
+                                </div>
+                                <div class="input">
+                                    <input name="blog-name"
+                                        value="<%=blog.title %>"
+                                        autocomplete="off" class="blog-name"
+                                        type="text"
+                                        placeholder="Enter blog title" />
+                                </div>
+                                <div class="input">
+                                    <input name="summary"
+                                        value="<%=blog.summary %>"
+                                        autocomplete="off" class="summary"
+                                        type="text"
+                                        placeholder="Enter blog summary" />
+                                </div>
+                                <div class="input">
+                                    <textarea name="content" class="content"
+                                        autocomplete="off"
+                                        rows="15"><%=blog.content %></textarea>
+                                </div>
+                                <div class="edit-delete">
+                                    <button type="submit" class="btn submit"
+                                        data-id="<%=blog.id %>">
+                                        Save Changes
+                                    </button>
+                                    <button type="submit"
+                                        class="btn-delete delete"
+                                        data-id="<%=blog.id %>">Delete Blog
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('click', (e) => {
+            ////fetch DELETE request
+            if (e.target.classList.contains("delete")) {
+                e.preventDefault()
+                const id = e.target.getAttribute('data-id')
+
+                axios({
+                    method: 'DELETE',
+                    headers: { 'content-type': 'application/json' },
+                    data: { id },
+                    url: `/admin/delete/${id}`
+                })
+                    .then((response) => {
+                        // console.log(response.data.msg)
+                        // console.log(response.status)
+                        const div = document.querySelector(`[data-div="${response.data.msg}"]`).remove()
+                    })
+                    .catch(() => { console.log('Error') })
+
+                /* fetch(`/admin/delete/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify()
+                })
+                    .then(response => {
+                        return response.json()
+                    })
+                    .then((data) =>
+                        // this is the data we get after doing the delete request, do whatever you want with this data
+                        console.log(JSON.parse(data))
+                   ); */
+            }
+            //Update request
+            if (e.target.classList.contains("submit")) {
+                e.preventDefault()
+                const id = e.target.getAttribute('data-id')
+                const accordionItemDiv = e.target.closest('.accordion-item')
+
+                const author = accordionItemDiv.querySelector('.author').value
+                const category = accordionItemDiv.querySelector('.category').value
+                const title = accordionItemDiv.querySelector('.blog-name').value
+                const summary = accordionItemDiv.querySelector('.summary').value
+                const content = accordionItemDiv.querySelector('.content').value
+
+                const data = { id, author, category, title, summary, content }
+                console.log(data)
+                //Axios PUT request
+                axios({
+                    method: 'PUT',
+                    headers: { 'content-type': 'application/json' },
+                    data: data,
+                    url: `/admin/update/${id}`
+                })
+                    .then((msg) => {
+                        console.log(msg.data.id)
+                    }).catch(() => { console.log('Error') })
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <%- include('./partials/nav'); %>
+  </header>
+  <main class="main">
+    <div class="main__layout main__container">
+      <div class="main__leftgrid">
+        <h1 class="main__h1">
+          Our business is <br />
+          making yours <br />
+          look great
+        </h1>
+        <img class="main__smiley" src="/images/smiley.svg"
+          alt="visign design asset 1" />
+        <p class="main__message">
+          We provide brand centred graphic design and web development
+          services to SMEs and corporates in Nairobi.
+        </p>
+        <a href="#contact" class="main__link">
+          <button
+            class="btn__button btn__button--bg btn__button--text btn__button--align">Contact
+            Us</button>
+        </a>
+        <div class="main__circle"></div>
+      </div>
+      <img class="main__hero" src="/images/visign-hero-image.jpg"
+        alt="hero image" />
+    </div>
+  </main>
+  <section class="sectionOne">
+    <div class="sectionOne__main sectionOne__main--bg">
+      <div class="sectionOne__layout">
+        <div class="sectionOne__element">
+          <h2>
+            We're a radical design studio in Nairobi. We create
+            simple organic
+            designs.
+          </h2>
+          <p>
+            In the market place, if you are not unique you're a commodity.
+          </p>
+        </div>
+        <div class="sectionOne__element sectionOne__element--bordered">
+          <p>
+            We create unique brands, we rebrand those who want
+            to be
+            unique
+            and we do it right.
+          </p>
+        </div>
+        <div class="sectionOne__element">
+          <p>
+            Let us help you enter the market with a bang! Make your first
+            impression and make it count.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services">
+    <article class="services__intro">
+      <h2>Our Services</h2>
+      <p>
+        We offer creative services to help start ups and corporates
+        communicate
+        with their customers.
+      </p>
+    </article>
+    <article class="services__container">
+      <div class="services__card">
+        <div class="services__img-div">
+          <img class="services__img" src="images/graphic-design-layout.svg"
+            alt="web development icon" />
+        </div>
+        <h3>Graphic design</h3>
+        <p>
+          Skillful design elevates your brand. It helps to tell
+          your
+          brand story
+          in a beautiful and attractive way. Good printing is as
+          important as
+          the design itself it not more.
+        </p>
+      </div>
+      <div class="services__card">
+        <div class="services__img-div">
+          <img class="services__img" src="images/web-design-icon.svg"
+            alt="web design icon" />
+        </div>
+        <h3>Branding</h3>
+        <p>
+          Your customers expect to find you online. You need a
+          website
+          to take
+          your brand online. A good website should have that look
+          and
+          feel that
+          represents your brand.
+        </p>
+      </div>
+      <div class="services__card">
+        <div class="services__img-div">
+          <img class="services__img" src="images/web-icon.svg"
+            alt="web design icon" />
+        </div>
+        <h3>Web design</h3>
+        <p>
+          Your customers expect to find you online. You need a
+          website to take your brand online. A good website should have that
+          look and feel that represents your brand. </p>
+      </div>
+    </article>
+  </section>
+  <section class="contacts">
+    <h2 id="contact" class="contacts__h2 contacts__h2--align">
+      We're here for you. Give us a call or send an Email.
+    </h2>
+    <p class="contacts__p contacts__p--align">
+      We're excited to work with you. Your brand's journey to the next
+      level begins here.
+    </p>
+    <div class="contacts__button-div">
+      <a class="contacts__link" href="mailto:dkibui@visign.co.ke">
+        <button
+          class="contacts__button contacts__button--bg contacts__button--text contacts__button--align">
+          Email Us
+        </button></a>
+    </div>
+    <p class="contacts__address">
+      Cell: +254 728 49 4090 <br />
+      Email: dkibui@visign.co.ke<br />Office: 6th Floor, Westend
+      Towers.<br />Westlands
+      Nairobi.
+    </p>
+  </section>
+  <%- include('./partials/footer'); %>
+</body>
+
+</html>

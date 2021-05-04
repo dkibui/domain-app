@@ -1,0 +1,370 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Start of design */
+:root {
+  --black: #000;
+  --color: #9c9c9c;
+  --deep-blue: #172647;
+  --grey: #969dac;
+  --muted-green: #e7fcfe;
+  --primary: #ffad0a;
+  --purple: #9b5de5;
+  --red: #ff3400;
+  --green: #1ae5c1;
+  --white: #fff;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow-y: scroll;
+}
+
+main {
+  background-color: var(--black);
+}
+
+.main__container {
+  padding: 3rem 0;
+  margin: auto;
+  width: 90%;
+  max-width: 1280px;
+}
+
+/* Buttons */
+.btn__button {
+  padding: 1.025rem 2.8rem;
+  border-radius: 30px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn__button--bg {
+  background-color: var(--red);
+}
+
+.btn__button--text {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Smiley image */
+.main__smiley {
+  display: block;
+  max-width: 65px;
+  padding-left: 20px;
+  margin-bottom: 2.5rem;
+}
+
+/* Text styles */
+.main__h1 {
+  color: var(--white);
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 560px;
+}
+
+.main__message {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+}
+
+/* Circles */
+.circle {
+  background-color: #e7fcfe;
+  border-radius: 50%;
+  height: 400px;
+  left: 5%;
+  opacity: 0.025;
+  position: absolute;
+  top: 20%;
+  width: 400px;
+}
+
+.main__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .main__layout {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+  }
+}
+
+.main__hero {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* 
+End of main section
+*/
+
+.sectionOne__main {
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.sectionOne__main--bg {
+  background-color: var(--muted-green);
+}
+
+.sectionOne__layout {
+  margin: 2.5rem 8%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  grid-row-gap: 2.4rem;
+}
+
+.sectionOne__element h2 {
+  font-size: 1.8em;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 1.8rem;
+}
+
+.sectionOne__element p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 768px) {
+  .sectionOne__main {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .sectionOne__layout {
+    margin: 2.8rem 1%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sectionOne__element {
+    padding: 0 2.8rem;
+  }
+
+  .sectionOne__element--bordered {
+    border-left: 1px solid var(--purple);
+    border-right: 1px solid var(--purple);
+  }
+}
+
+/* 
+End of sectionOne
+*/
+
+.services {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+}
+
+.services__intro h2 {
+  color: var(--deep-blue);
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.services__intro p {
+  width: 86%;
+  margin: auto;
+  color: var(--deep-blue);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.services__card {
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2.5px 2.2px rgba(0, 0, 0, 0.07),
+    0 10px 5.3px rgba(0, 0, 0, 0.039), 0 24.1px 10px rgba(0, 0, 0, 0.035),
+    0 46.9px 17.9px rgba(0, 0, 0, 0.034), 0 81.7px 33.4px rgba(0, 0, 0, 0.034),
+    0 118px 80px rgba(0, 0, 0, 0.03);
+}
+
+.services__img-div {
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.05125);
+  width: auto;
+  border-radius: 8px;
+}
+
+.services__img {
+  width: 100%;
+  max-width: 50px;
+  display: block;
+}
+
+.services__card h3 {
+  text-transform: capitalize;
+  margin-top: 1.4em;
+  line-height: 1.5;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: rgb(87, 87, 87);
+}
+
+.services__card p {
+  margin-top: 0.5rem;
+  font-size: 1em;
+  line-height: 1.75;
+  color: var(--color);
+}
+
+.services__container {
+  display: grid;
+  grid-row-gap: 3em;
+}
+
+@media only screen and (min-width: 820px) {
+  .services {
+    margin-top: 5rem;
+  }
+
+  .services__container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+  }
+}
+
+/* 
+Start of contacts section
+*/
+
+.contacts {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.contacts h1 {
+  color: var(--deep-blue);
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 540px;
+  margin: 2.5rem auto;
+}
+
+.contacts h2 {
+  color: var(--deep-blue);
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 540px;
+  margin: auto;
+  margin-bottom: 2.5rem;
+}
+
+.contacts p {
+  color: var(--deep-blue);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.contacts__link {
+  text-decoration: none;
+}
+
+.contacts__button-div {
+  width: fit-content;
+  margin: 2.5rem auto;
+  /* background-color: aquamarine; */
+}
+
+.contacts__button {
+  padding: 1.025rem 2.8rem;
+  border-radius: 30px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.contacts__button--bg {
+  background-color: var(--red);
+}
+
+.contacts__button--text {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 
+About page
+*/
+
+.about__container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.about__h1 {
+  color: var(--deep-blue);
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 560px;
+  margin: auto;
+  margin-bottom: 1.1rem;
+}
+
+.about__h1--align {
+  text-align: center;
+}
+
+.about__h2 {
+  font-size: 1.8em;
+  font-weight: 800;
+  line-height: 1.5;
+  color: var(--deep-blue);
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.about__h2--align {
+  text-align: center;
+}
+
+.about p {
+  color: var(--deep-blue);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
