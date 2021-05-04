@@ -5,13 +5,11 @@ const PORT = 3000
 
 //Markdown to html
 const marked = require("marked")
-// const html = marked('# Marked in Node.js\n\nRendered by **marked**.');
 
 const { db } = require("./config/dbconfig")
 const { getMaxListeners } = require("process")
 const pool = db()
 
-//User defined routes
 // view engine setup
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")
@@ -64,33 +62,6 @@ app.get("/blogs", (req, res) => {
     }
   })
 })
-
-// app.get("/blogs/:id", (req, res) => {
-//   const sql = `SELECT *
-//   FROM blogs
-//   WHERE id=$1`
-//   const id = req.params.id
-//   pool.query(sql, [id], (err, results) => {
-//     if (!err) {
-//       // console.log(results.rows)
-//       const { id, title, summary, content, created_at } = results.rows[0]
-//       const payload = {
-//         id,
-//         title,
-//         summary,
-//         content: marked(content),
-//         created_at,
-//       }
-//       // console.log(payload)
-//       res.render("blog", {
-//         blogs: JSON.stringify(payload),
-//         title: title,
-//       })
-//     } else {
-//       console.log("Error querying database")
-//     }
-//   })
-// })
 
 //CREATE BLOG
 app.post("/admin/blogs/create", (req, res) => {
