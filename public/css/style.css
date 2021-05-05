@@ -226,15 +226,15 @@ End of sectionOne
   margin-top: 1.4em;
   line-height: 1.5;
   font-size: 1.2em;
-  font-weight: 600;
-  color: rgb(87, 87, 87);
+  font-weight: 700;
+  color: var(--deep-blue);
 }
 
 .services__card p {
   margin-top: 0.5rem;
   font-size: 1em;
   line-height: 1.75;
-  color: var(--color);
+  color: var(--deep-blue);
 }
 
 .services__container {
