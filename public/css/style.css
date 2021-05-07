@@ -58,8 +58,8 @@ main {
 /* Smiley image */
 .main__smiley {
   display: block;
-  max-width: 65px;
-  padding-left: 20px;
+  max-width: 55px;
+  padding-left: 15px;
   margin-bottom: 2.5rem;
 }
 
@@ -118,6 +118,12 @@ main {
     margin: auto;
     width: 90%;
     max-width: 1280px;
+  }
+
+  /* Smiley image */
+  .main__smiley {
+    max-width: 65px;
+    padding-left: 20px;
   }
 }
 
