@@ -21,14 +21,13 @@
 }
 
 .about-us__container {
-  padding: 1.2rem;
+  padding: 1.6rem 1.2rem;
   height: 100%;
 }
 
 .about-us__h1 {
   color: var(--deep-blue);
   width: 90%;
-  margin: 0 auto;
   font-size: 1.8rem;
   font-weight: 300;
   text-align: center;
@@ -90,7 +89,6 @@
   font-weight: 400;
   margin: 0;
   margin-top: 2rem;
-  margin-bottom: 3rem;
   line-height: 1.7;
 }
 
@@ -132,7 +130,7 @@
 }
 
 .about-us__h3 {
-  font-size: 4em;
+  font-size: 2.6em;
   font-weight: 800;
 }
 
@@ -167,6 +165,11 @@
   .about-desctiption__content {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4rem;
+  }
+
+  .about-us__h3 {
+    font-size: 4em;
+    font-weight: 800;
   }
 }
 
