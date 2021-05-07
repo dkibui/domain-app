@@ -42,3 +42,35 @@ CREATE TABLE blogs (
 -- ALTER TABLE orders
 --     ADD CONSTRAINT fk_orders_customers FOREIGN KEY (customer_id) REFERENCES customers (id);
 --------------------------------------------------------
+insert into
+    authors (first_name, last_name, bio_detail, email)
+values
+    (
+        'David',
+        'Kibui',
+        'David is a fullstack developer based in Nairobi',
+        'dkibui@gmail.com'
+    );
+
+-----------------------------------------------
+insert INTO
+    categories (category)
+values
+    ('Nodejs'),
+    ('Javascript'),
+    ('CSS'),
+    ('Svelte'),
+    ('Postgres'),
+    ('HTML');
+
+------------------------------------------------
+insert into
+    blogs (author_id, category_id, title, summary, content)
+values
+    (
+        1,
+        1,
+        'Setting up an Express server',
+        'Create a folder and name it expressAPI. Inside of the folder create a Javascript file and name it app.js.',
+        'Initialize the project with npm init -y and then install our project dependencies. Let us install express, pg and ejs. PG is a Postgres connector and it allows our Nodejs app to connect and communicate with Postgres DBMS. EJS is a render engine for Nodejs.'
+    );
