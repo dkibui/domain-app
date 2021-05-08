@@ -1,6 +1,6 @@
-controllers
-models
-routes
+# controllers
+# models
+# routes
 # Ignore node_modules folder
 node_modules
 blogs.sql
