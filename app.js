@@ -39,6 +39,7 @@ app.get("/contact", (req, res) => {
 
 //DISPLAY BLOGS
 app.get("/blogs", (req, res) => {
+  console.log("Display blogs request received")
   const sql = `SELECT * 
     FROM blogs 
     ORDER BY id DESC 
